@@ -18,7 +18,7 @@ class SessionController extends Controller
     public function store()
     {
         $attirbutes = request()->validate([
-            'email' =>'required|exists:users,email',
+            'email' =>'required',
             'password' => 'required',
         ]);
 
@@ -29,7 +29,6 @@ class SessionController extends Controller
         return back()
             ->withInput()
             ->withErrors(['email'=>'credintials could not be verified']);
-        
     }
 
     public function create()
